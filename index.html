@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>MP Agrotech – Planos de Ação Sonnora e Cerenna</title>
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <style>
+    :root {
+      --mp-bg: #1f2535;
+      --mp-green: #3da54b;
+      --mp-white: #ffffff;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: var(--mp-bg);
+      color: var(--mp-white);
+      min-height: 100vh;
+    }
+    .topbar {
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 32px 4px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .topbar img { height: 48px; object-fit: contain; }
+    .tabs { display: flex; gap: 10px; margin-top: 8px; }
+    .tab {
+      padding: 8px 18px;
+      border-radius: 999px 999px 0 0;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-bottom: none;
+      font-size: 13px;
+    }
+    .tab.active { background: var(--mp-green); font-weight: 600; }
+    .page { display: none; padding: 25px 32px 40px 32px; }
+    .page.active { display: block; }
+    table { width: 100%; border-collapse: collapse; min-width: 900px; color: #fff; }
+    th, td { padding: 10px; border: 1px solid rgba(255,255,255,0.1); }
+    thead tr { background: rgba(0,0,0,0.35); }
+    tbody tr:nth-child(even) { background: rgba(255,255,255,0.05); }
+    .status-em-andamento { color: #f3c26b; font-weight: 600; }
+    .status-pendente { color: #ff8787; font-weight: 600; }
+    .status-aguardando { color: #a98cff; font-weight: 600; }
+    .status-ticket { color: #62b0ff; font-weight: 600; }
+    .footer { margin: 20px 0; text-align: center; font-size: 12px; color: rgba(255,255,255,0.5); }
+  </style>
+  <script>
+    function showPage(id, el){
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      el.classList.add('active');
+    }
+    window.onload = ()=>{ document.querySelector('.tab').click(); };
+  </script>
+</head>
+<body>
+  <div class="topbar">
+    <img src="logo.png" alt="MP Agrotech">
+    <div class="tabs">
+      <div class="tab" onclick="showPage('sonnora', this)">Agrosonnora</div>
+      <div class="tab" onclick="showPage('cerenna', this)">Cerenna</div>
+    </div>
+  </div>
+
+  <div id="sonnora" class="page">
+    <h2 style="color: var(--mp-green)">Plano de Ação – Agrosonnora</h2>
+    <p>Cliente: Agrosonnora Comercial Agrícola Ltda – Pós Go Live Agrotitan (Atualização 31/10/2025)</p>
+    <table>
+      <thead><tr><th>Pendência</th><th>Ação</th><th>Responsável</th><th>Prazo</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Assinatura do receituário</td><td>Verificar certificado e orientar procedimentos.</td><td>Equipe técnica</td><td>31/10</td><td class="status-em-andamento">Em andamento</td></tr>
+        <tr><td>Estoque de peças</td><td>Alterar códigos e concluir carga manual.</td><td>Marcos</td><td>31/10</td><td class="status-em-andamento">Em execução</td></tr>
+        <tr><td>SIG@ erros</td><td>Acionar Tafa e tratar próximos erros no suporte.</td><td>Equipe técnica / Tafa</td><td>Imediato</td><td class="status-aguardando">Aguardando</td></tr>
+        <tr><td>Importação com erros</td><td>Finalizar cadastros e correções.</td><td>Marcos</td><td>03/11</td><td class="status-pendente">Pendente</td></tr>
+        <tr><td>Boletos ZTR</td><td>Aguardando retorno Banrisul / Viasoft.</td><td>Viasoft / Banrisul</td><td>—</td><td class="status-ticket">Ticket aberto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="cerenna" class="page">
+    <h2 style="color: var(--mp-green)">Plano de Ação – Cerenna</h2>
+    <p>Cliente: Cerenna Agroindustrial Ltda – Pós Go Live Agrotitan (Atualização 31/10/2025)</p>
+    <table>
+      <thead><tr><th>Pendência</th><th>Ação</th><th>Responsável</th><th>Prazo</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Relatório de Referência</td><td>Criar ticket para formalizar alterações com Sonnora.</td><td>Equipe técnica / Movidesk</td><td>31/10</td><td class="status-em-andamento">Em andamento</td></tr>
+        <tr><td>Relatório de Venda Futura</td><td>Ajuste de layout e quebra de linha no ticket.</td><td>Equipe técnica</td><td>31/10</td><td class="status-em-andamento">Em andamento</td></tr>
+        <tr><td>Relatório Ficha do Produtor</td><td>Registrar demanda de criação/ajuste no Movidesk.</td><td>Equipe técnica / Movidesk</td><td>31/10</td><td class="status-pendente">Pendente</td></tr>
+        <tr><td>Relatório Estoque Físico x Disponível</td><td>Celberto criar ticket e alinhar com Viasoft.</td><td>Celberto / Viasoft</td><td>31/10</td><td class="status-aguardando">Aguardando</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">MP Agrotech – Tecnologia de gestão que impulsiona o futuro do agronegócio.</div>
+</body>
+</html>
