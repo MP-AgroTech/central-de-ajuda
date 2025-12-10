@@ -1,103 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>MP Agrotech – Planos de Ação Sonnora e Cerenna</title>
-  <link rel="icon" type="image/png" href="logo.png"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Central de Ajuda — MP Agrotech</title>
   <style>
-    :root {
-      --mp-bg: #1f2535;
-      --mp-green: #3da54b;
-      --mp-white: #ffffff;
-    }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      background: var(--mp-bg);
-      color: var(--mp-white);
-      min-height: 100vh;
-    }
-    .topbar {
-      background: rgba(0,0,0,0.3);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 32px 4px 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .topbar img { height: 48px; object-fit: contain; }
-    .tabs { display: flex; gap: 10px; margin-top: 8px; }
-    .tab {
-      padding: 8px 18px;
-      border-radius: 999px 999px 0 0;
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-      cursor: pointer;
-      border: 1px solid transparent;
-      border-bottom: none;
-      font-size: 13px;
-    }
-    .tab.active { background: var(--mp-green); font-weight: 600; }
-    .page { display: none; padding: 25px 32px 40px 32px; }
-    .page.active { display: block; }
-    table { width: 100%; border-collapse: collapse; min-width: 900px; color: #fff; }
-    th, td { padding: 10px; border: 1px solid rgba(255,255,255,0.1); }
-    thead tr { background: rgba(0,0,0,0.35); }
-    tbody tr:nth-child(even) { background: rgba(255,255,255,0.05); }
-    .status-em-andamento { color: #f3c26b; font-weight: 600; }
-    .status-pendente { color: #ff8787; font-weight: 600; }
-    .status-aguardando { color: #a98cff; font-weight: 600; }
-    .status-ticket { color: #62b0ff; font-weight: 600; }
-    .footer { margin: 20px 0; text-align: center; font-size: 12px; color: rgba(255,255,255,0.5); }
+    body{margin:0;font-family:Inter,system-ui;background:#f4f4f4;color:#222}
+    header{background:#000;padding:40px 20px;text-align:center;color:#fff}
+    header img{width:200px;margin-bottom:20px}
+    .searchbar{max-width:600px;margin:0 auto;display:flex;background:#fff;border-radius:40px;padding:10px 20px;align-items:center;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+    .searchbar input{flex:1;border:none;font-size:16px;outline:none}
+    main{padding:40px;max-width:1100px;margin:auto}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+    .card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 6px rgba(0,0,0,0.1);cursor:pointer;transition:.2s}
+    .card:hover{transform:scale(1.02);box-shadow:0 4px 12px rgba(0,0,0,0.18)}
+    .card h3{margin:0 0 8px}
+    .showall{display:block;margin:20px auto 0;text-align:center;padding:10px 20px;background:#fff;border:1px solid #ccc;border-radius:8px;cursor:pointer}
   </style>
-  <script>
-    function showPage(id, el){
-      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      el.classList.add('active');
-    }
-    window.onload = ()=>{ document.querySelector('.tab').click(); };
-  </script>
 </head>
 <body>
-  <div class="topbar">
-    <img src="logo.png" alt="MP Agrotech">
-    <div class="tabs">
-      <div class="tab" onclick="showPage('sonnora', this)">Agrosonnora</div>
-      <div class="tab" onclick="showPage('cerenna', this)">Cerenna</div>
+  <header>
+    <div style="position:absolute;left:20px;top:15px;">
+      <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
+        Atualizado: <strong>10/12/2025</strong>
+      </div>
+    </div>
+    <img src="https://i.postimg.cc/52752S30/Whats-App-Image-2025-12-03-at-20-26-42.jpg" />
+    <div class="searchbar">
+      <input id="q" placeholder="Digite sua dúvida..." oninput="filter()" />
+    </div>
+    <button class="showall" onclick="resetSearch()">Listar todas as dúvidas</button>
+  </header>
+
+  <main>
+    <main>
+    <div class="grid" id="cards">
+      <div class="card" data-text="exmpimp sped exportação" onclick="openDetail('d1')"><h3>EXMPIMP – Exportação não aparece no SPED</h3><p>Exportação não aparece no SPED após executar o exmpimp.</p></div>
+      <div class="card" data-text="reag culturas erro configuração" onclick="openDetail('d2')"><h3>REAG – Falha para todas as culturas</h3><p>Falha ao executar REAG em qualquer cultura.</p></div>
+      <div class="card" data-text="usuários criar cadastro senha" onclick="openDetail('d3')"><h3>Criação de Usuários</h3><p>Procedimento para criar usuários no VIASOFT3C.</p></div>
+      <div class="card" data-text="cheques estorno situação aberto" onclick="openDetail('d4')"><h3>Cheques – Estorno</h3><p>Erro ao excluir cheque pois não está em situação ABERTO.</p></div>
+      <div class="card" data-text="lote xml qlote quantidade" onclick="openDetail('d5')"><h3>Lote no XML</h3><p>QLote exibindo quantidade fabricada em vez da vendida.</p></div>
+      <div class="card" data-text="monitor notas nsu conexão" onclick="openDetail('d6')"><h3>Monitor de Notas</h3><p>Notas não são buscadas pelo monitor.</p></div>
+      <div class="card" data-text="reag base atualização" onclick="openDetail('d7')"><h3>Atualização da Base REAG</h3><p>Como atualizar a base via arquivos.</p></div>
+      <div class="card" data-text="pedido nota vínculo peditemnfitem" onclick="openDetail('d8')"><h3>Pedido não vinculado à nota</h3><p>Pedido não vincula automaticamente à NF.</p></div>
+      <div class="card" data-text="comissão renegociação títulos" onclick="openDetail('d9')"><h3>Comissão para Renegociações</h3><p>Comissão não gerada em títulos renegociados.</p></div>
+      <div class="card" data-text="erro impostos nota tributação" onclick="openDetail('d10')"><h3>Erro de Impostos na Nota</h3><p>Erro ao lançar nota fiscal.</p></div>
+      <div class="card" data-text="campos obrigatórios person" onclick="openDetail('d11')"><h3>Campos Obrigatórios</h3><p>Como marcar um campo como obrigatório.</p></div>
+    </div>
+      
+    </div>
+  </main>
+
+  <!-- MODAL DETALHES -->
+  <div id="detailModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);justify-content:center;align-items:center;padding:20px;">
+    <div style="background:#fff;max-width:700px;width:100%;border-radius:12px;padding:30px;position:relative;max-height:90vh;overflow:auto;">
+      <button onclick="closeDetail()" style="position:absolute;right:20px;top:20px;font-size:20px;background:none;border:none;cursor:pointer">✖</button>
+      <div id="detailContent"></div>
     </div>
   </div>
 
-  <div id="sonnora" class="page">
-    <h2 style="color: var(--mp-green)">Plano de Ação – Agrosonnora</h2>
-    <p>Cliente: Agrosonnora Comercial Agrícola Ltda – Pós Go Live Agrotitan (Atualização 31/10/2025)</p>
-    <table>
-      <thead><tr><th>Pendência</th><th>Ação</th><th>Responsável</th><th>Prazo</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td>Assinatura do receituário</td><td>Verificar certificado e orientar procedimentos.</td><td>Equipe técnica</td><td>31/10</td><td class="status-em-andamento">Em andamento</td></tr>
-        <tr><td>Estoque de peças</td><td>Alterar códigos e concluir carga manual.</td><td>Marcos</td><td>31/10</td><td class="status-em-andamento">Em execução</td></tr>
-        <tr><td>SIG@ erros</td><td>Acionar Tafa e tratar próximos erros no suporte.</td><td>Equipe técnica / Tafa</td><td>Imediato</td><td class="status-aguardando">Aguardando</td></tr>
-        <tr><td>Importação com erros</td><td>Finalizar cadastros e correções.</td><td>Marcos</td><td>03/11</td><td class="status-pendente">Pendente</td></tr>
-        <tr><td>Boletos ZTR</td><td>Aguardando retorno Banrisul / Viasoft.</td><td>Viasoft / Banrisul</td><td>—</td><td class="status-ticket">Ticket aberto</td></tr>
-      </tbody>
-    </table>
-  </div>
+<script>
+const details = {
+  d1: `<h2>EXMPIMP – Exportação não aparece no SPED</h2>
+       <p><strong>Sintoma:</strong> Exportação não aparece no SPED mesmo após execução do exmpimp.</p>
+       <p><strong>Causas:</strong></p>
+       <ul><li>Serviço activeemp não está ativado.</li><li>Integração Fiscal desativada.</li></ul>
+       <p><strong>Como resolver:</strong></p>
+       <ol><li>Abrir o <em>activeemp</em> pelo Gerenciador de Tarefas.</li><li>Ativar o serviço <strong>Integração Fiscal</strong>.</li></ol>` ,
 
-  <div id="cerenna" class="page">
-    <h2 style="color: var(--mp-green)">Plano de Ação – Cerenna</h2>
-    <p>Cliente: Cerenna Agroindustrial Ltda – Pós Go Live Agrotitan (Atualização 31/10/2025)</p>
-    <table>
-      <thead><tr><th>Pendência</th><th>Ação</th><th>Responsável</th><th>Prazo</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td>Relatório de Referência</td><td>Criar ticket para formalizar alterações com Sonnora.</td><td>Equipe técnica / Movidesk</td><td>31/10</td><td class="status-em-andamento">Em andamento</td></tr>
-        <tr><td>Relatório de Venda Futura</td><td>Ajuste de layout e quebra de linha no ticket.</td><td>Equipe técnica</td><td>31/10</td><td class="status-em-andamento">Em andamento</td></tr>
-        <tr><td>Relatório Ficha do Produtor</td><td>Registrar demanda de criação/ajuste no Movidesk.</td><td>Equipe técnica / Movidesk</td><td>31/10</td><td class="status-pendente">Pendente</td></tr>
-        <tr><td>Relatório Estoque Físico x Disponível</td><td>Celberto criar ticket e alinhar com Viasoft.</td><td>Celberto / Viasoft</td><td>31/10</td><td class="status-aguardando">Aguardando</td></tr>
-      </tbody>
-    </table>
-  </div>
+  d2: `<h2>REAG – Falha para todas as culturas</h2>
+       <p><strong>Sintoma:</strong> Falha ao executar REAG.</p>
+       <p><strong>Como resolver:</strong></p>
+       <ol><li>Acessar Configurações → Configurações → REAG.</li><li>Marcar exibição do <strong>226.328</strong>.</li></ol>` ,
 
-  <div class="footer">MP Agrotech – Tecnologia de gestão que impulsiona o futuro do agronegócio.</div>
+  d3: `<h2>Criação de Usuários</h2>
+       <ol><li>Acessar VIASOFT3C.</li><li>Ir em Configurações → Usuários → Cadastro de Usuários.</li><li>Criar usuário e definir senha.</li><li>Testar login.</li></ol>` ,
+
+  d4: `<h2>Cheques – Estorno</h2>
+       <p><strong>Erro:</strong> Não é possível excluir cheque.</p>
+       <p><strong>Causa:</strong> Situação diferente de <strong>ABERTO</strong>.</p>` ,
+
+  d5: `<h2>Lote no XML – QLOTE</h2>
+       <p><strong>Descrição:</strong> XML mostra quantidade fabricada.</p>
+       <p><strong>Solução:</strong></p>
+       <ol><li>Acessar Estoque → Controle de Lotes → Data de validade.</li><li>Zerar quantidade total de lotes.</li></ol>` ,
+
+  d6: `<h2>Monitor de Notas não busca notas</h2>
+       <p><strong>Causas:</strong></p>
+       <ul><li>NSU usado.</li><li>Conexão com servidor falhando.</li></ul>` ,
+
+  d7: `<h2>Atualização da Base REAG</h2><ol><li>Acessar Atualizações → Atualizar via arquivos.</li></ol>` ,
+
+  d8: `<h2>Pedido não vinculado à Nota</h2>
+       <p><strong>Solução técnica:</strong> Inserir linha em <code>peditemnfitem</code>.</p>` ,
+
+  d9: `<h2>Comissão para Renegociações</h2>
+       <ol><li>Acessar parâmetros do usuário.</li><li>Habilitar opção <strong>Altera Comissão de Dup. Renegociadas</strong>.</li></ol>` ,
+
+  d10: `<h2>Erro de Impostos ao lançar Nota</h2>
+        <p>Checar tributação, estado, consumidor final.</p>` ,
+
+  d11: `<h2>Campos Obrigatórios</h2>
+        <p>Definir no <em>person</em>.</p>`
+};
+
+function openDetail(id){
+  document.getElementById('detailContent').innerHTML = details[id];
+  document.getElementById('detailModal').style.display='flex';
+}
+function closeDetail(){document.getElementById('detailModal').style.display='none';}
+function filter(){let q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.dataset.text.includes(q)?'block':'none'});}  
+function resetSearch(){document.getElementById('q').value='';filter();}
+</script>
 </body>
 </html>
