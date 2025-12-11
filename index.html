@@ -41,19 +41,17 @@
       <div class="card" data-text="lote xml qlote quantidade" onclick="openDetail('d5')"><h3>Lote no XML</h3><p>QLote exibindo quantidade fabricada em vez da vendida.</p></div>
       <div class="card" data-text="monitor notas nsu conexão" onclick="openDetail('d6')"><h3>Monitor de Notas</h3><p>Notas não são buscadas pelo monitor.</p></div>
       <div class="card" data-text="reag base atualização" onclick="openDetail('d7')"><h3>Atualização da Base REAG</h3><p>Como atualizar a base via arquivos.</p></div>
-      <div class="card" data-text="pedido nota vínculo peditemnfitem" onclick="openDetail('d8')"><h3>Pedido não vinculado à nota</h3><p>Pedido não vincula automaticamente à NF.</p></div>
+      <div class="card" data-text="pedido nota vínculo peditemnfitem" onclick="openDetail('d8')"><h3>Pedido não vinculado a nota</h3><p>Caso algum pedido não esteja vinculado na nota, seguir as ações.</p></div>
       <div class="card" data-text="comissão renegociação títulos" onclick="openDetail('d9')"><h3>Comissão para Renegociações</h3><p>Comissão não gerada em títulos renegociados.</p></div>
       <div class="card" data-text="erro impostos nota tributação" onclick="openDetail('d10')"><h3>Erro de Impostos na Nota</h3><p>Erro ao lançar nota fiscal.</p></div>
       <div class="card" data-text="campos obrigatórios person" onclick="openDetail('d11')"><h3>Campos Obrigatórios</h3><p>Como marcar um campo como obrigatório.</p></div>
 
-      <!-- NOVOS CARDS -->
       <div class="card" data-text="monitor cte nfe não buscando informações certificado digital portal doc agendador tarefas" onclick="openDetail('d12')"><h3>Monitor CT-e e NF-e não buscando informações</h3><p>Verificações essenciais para funcionamento correto.</p></div>
 
       <div class="card" data-text="dfe porta uso já em uso erro porta ocupada conexões opções 300 301 9090" onclick="openDetail('d13')"><h3>DF-e informando porta já em uso</h3><p>Como resolver conflito de portas no DF-e.</p></div>
     </div>
   </main>
 
-  <!-- MODAL DETALHES -->
   <div id="detailModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);justify-content:center;align-items:center;padding:20px;">
     <div style="background:#fff;max-width:700px;width:100%;border-radius:12px;padding:30px;position:relative;max-height:90vh;overflow:auto;">
       <button onclick="closeDetail()" style="position:absolute;right:20px;top:20px;font-size:20px;background:none;border:none;cursor:pointer">✖</button>
@@ -93,8 +91,14 @@ const details = {
 
   d7: `<h2>Atualização da Base REAG</h2><ol><li>Acessar Atualizações → Atualizar via arquivos.</li></ol>`,
 
-  d8: `<h2>Pedido não vinculado à Nota</h2>
-       <p><strong>Solução técnica:</strong> Inserir linha em <code>peditemnfitem</code>.</p>`,
+  d8: `<h2>Pedido não vinculado a nota</h2>
+       <p><strong>Caso algum pedido não esteja vinculado na nota, seguir as ações:</strong></p>
+       <p><strong>Solução:</strong></p>
+       <ol>
+         <li>Mudar o status da tabela <strong>PEDCAB</strong> para <strong>B</strong>.</li>
+         <li>Inserir registros na tabela <strong>peditetmnfitem</strong>.</li>
+         <li>Verificar se existe a configuração do <strong>"a partir de"</strong>.</li>
+       </ol>`,
 
   d9: `<h2>Comissão para Renegociações</h2>
        <ol><li>Acessar parâmetros do usuário.</li><li>Habilitar opção <strong>Altera Comissão de Dup. Renegociadas</strong>.</li></ol>`,
