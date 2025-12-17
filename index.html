@@ -37,7 +37,6 @@
 <main>
   <div class="grid" id="cards">
 
-    <!-- CARDS EXISTENTES -->
     <div class="card" data-text="exmpimp sped exportação" onclick="openDetail('d1')">
       <h3>EXMPIMP – Exportação não aparece no SPED</h3>
       <p>Exportação não aparece no SPED após executar o exmpimp.</p>
@@ -93,10 +92,10 @@
       <p>Como marcar um campo como obrigatório.</p>
     </div>
 
-    <!-- ✅ NOVO CARD -->
-    <div class="card" data-text="autorização desconto notas validar desconto máximo" onclick="openDetail('d14')">
-      <h3>Autorização para desconto nas notas</h3>
-      <p>Como habilitar a validação de desconto máximo nos produtos.</p>
+    <!-- NOVO CARD -->
+    <div class="card" data-text="danfe diferente xml configuração danfe" onclick="openDetail('d15')">
+      <h3>DANFE diferente do XML</h3>
+      <p>DANFE não está saindo igual aos dados do XML.</p>
     </div>
 
   </div>
@@ -112,30 +111,37 @@
 
 <script>
 const details = {
-  d14: `
-    <h2>Autorização para desconto nas notas</h2>
-    <p>Para habilitar a autorização de desconto nas notas fiscais, siga o procedimento abaixo:</p>
+
+  d15: `
+    <h2>DANFE diferente do XML</h2>
+    <p>Quando a DANFE apresenta informações diferentes das que constam no XML, é necessário ajustar a configuração para buscar os dados diretamente do XML.</p>
     <ol>
-      <li>Acesse o menu <strong>Configurações</strong> do AGRO;</li>
-      <li>Entre em <strong>ADICIONAL</strong>;</li>
-      <li>Localize a opção <strong>Desconto Máximo nos produtos</strong>;</li>
-      <li>Marque a checkbox <strong>VALIDAR DESCONTO MÁXIMO</strong>.</li>
+      <li>Acesse o menu <strong>Docs Eletrônicos &gt; NF-e/NFC-e &gt; Configurações da DANFE</strong>;</li>
+      <li>Localize a opção referente à exibição da DANFE;</li>
+      <li>Marque a checkbox <strong>DANFE sair igual ao XML</strong>;</li>
+      <li>Salve a configuração e gere a DANFE novamente.</li>
     </ol>
   `
+
 };
 
 function openDetail(id){
   document.getElementById('detailContent').innerHTML = details[id];
   document.getElementById('detailModal').style.display='flex';
 }
-function closeDetail(){document.getElementById('detailModal').style.display='none';}
+function closeDetail(){
+  document.getElementById('detailModal').style.display='none';
+}
 function filter(){
   let q=document.getElementById('q').value.toLowerCase();
   document.querySelectorAll('.card').forEach(c=>{
-    c.style.display=c.dataset.text.includes(q)?'block':'none'
+    c.style.display=c.dataset.text.includes(q)?'block':'none';
   });
 }
-function resetSearch(){document.getElementById('q').value='';filter();}
+function resetSearch(){
+  document.getElementById('q').value='';
+  filter();
+}
 </script>
 
 </body>
