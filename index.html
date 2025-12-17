@@ -19,113 +19,109 @@
   </style>
 </head>
 <body>
-  <header>
-    <div style="position:absolute;left:20px;top:15px;">
-      <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-        Atualizado: <strong>11/12/2025</strong>
-      </div>
-    </div>
-    <img src="https://i.postimg.cc/52752S30/Whats-App-Image-2025-12-03-at-20-26-42.jpg" />
-    <div class="searchbar">
-      <input id="q" placeholder="Digite sua dúvida..." oninput="filter()" />
-    </div>
-    <button class="showall" onclick="resetSearch()">Listar todas as dúvidas</button>
-  </header>
 
-  <main>
-    <div class="grid" id="cards">
-      <div class="card" data-text="exmpimp sped exportação" onclick="openDetail('d1')"><h3>EXMPIMP – Exportação não aparece no SPED</h3><p>Exportação não aparece no SPED após executar o exmpimp.</p></div>
-      <div class="card" data-text="reag culturas erro configuração" onclick="openDetail('d2')"><h3>REAG – Falha para todas as culturas</h3><p>Falha ao executar REAG em qualquer cultura.</p></div>
-      <div class="card" data-text="usuários criar cadastro senha" onclick="openDetail('d3')"><h3>Criação de Usuários</h3><p>Procedimento para criar usuários no VIASOFT3C.</p></div>
-      <div class="card" data-text="cheques estorno situação aberto" onclick="openDetail('d4')"><h3>Cheques – Estorno</h3><p>Erro ao excluir cheque pois não está em situação ABERTO.</p></div>
-      <div class="card" data-text="lote xml qlote quantidade" onclick="openDetail('d5')"><h3>Lote no XML</h3><p>QLote exibindo quantidade fabricada em vez da vendida.</p></div>
-      <div class="card" data-text="monitor notas nsu conexão" onclick="openDetail('d6')"><h3>Monitor de Notas</h3><p>Notas não são buscadas pelo monitor.</p></div>
-      <div class="card" data-text="reag base atualização" onclick="openDetail('d7')"><h3>Atualização da Base REAG</h3><p>Como atualizar a base via arquivos.</p></div>
-      <div class="card" data-text="pedido nota vínculo peditemnfitem" onclick="openDetail('d8')"><h3>Pedido não vinculado a nota</h3><p>Caso algum pedido não esteja vinculado na nota, seguir as ações.</p></div>
-      <div class="card" data-text="comissão renegociação títulos" onclick="openDetail('d9')"><h3>Comissão para Renegociações</h3><p>Comissão não gerada em títulos renegociados.</p></div>
-      <div class="card" data-text="erro impostos nota tributação" onclick="openDetail('d10')"><h3>Erro de Impostos na Nota</h3><p>Erro ao lançar nota fiscal.</p></div>
-      <div class="card" data-text="campos obrigatórios person" onclick="openDetail('d11')"><h3>Campos Obrigatórios</h3><p>Como marcar um campo como obrigatório.</p></div>
-
-      <div class="card" data-text="monitor cte nfe não buscando informações certificado digital portal doc agendador tarefas" onclick="openDetail('d12')"><h3>Monitor CT-e e NF-e não buscando informações</h3><p>Verificações essenciais para funcionamento correto.</p></div>
-
-      <div class="card" data-text="dfe porta uso já em uso erro porta ocupada conexões opções 300 301 9090" onclick="openDetail('d13')"><h3>DF-e informando porta já em uso</h3><p>Como resolver conflito de portas no DF-e.</p></div>
-          <div class="card" data-text="reiniciar servidor cerati socket dfe" onclick="openDetail('d14')"><h3>Reiniciar servidor Cerati</h3><p>Procedimento após reiniciar o servidor.</p></div>
-    </div>
-  </main>
-
-  <div id="detailModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);justify-content:center;align-items:center;padding:20px;">
-    <div style="background:#fff;max-width:700px;width:100%;border-radius:12px;padding:30px;position:relative;max-height:90vh;overflow:auto;">
-      <button onclick="closeDetail()" style="position:absolute;right:20px;top:20px;font-size:20px;background:none;border:none;cursor:pointer">✖</button>
-      <div id="detailContent"></div>
+<header>
+  <div style="position:absolute;left:20px;top:15px;">
+    <div style="background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;">
+      Atualizado: <strong>12/12/2025</strong>
     </div>
   </div>
 
+  <img src="https://i.postimg.cc/52752S30/Whats-App-Image-2025-12-03-at-20-26-42.jpg" />
+  <div class="searchbar">
+    <input id="q" placeholder="Digite sua dúvida..." oninput="filter()" />
+  </div>
+  <button class="showall" onclick="resetSearch()">Listar todas as dúvidas</button>
+</header>
+
+<main>
+  <div class="grid" id="cards">
+
+    <!-- CARDS EXISTENTES -->
+    <div class="card" data-text="exmpimp sped exportação" onclick="openDetail('d1')">
+      <h3>EXMPIMP – Exportação não aparece no SPED</h3>
+      <p>Exportação não aparece no SPED após executar o exmpimp.</p>
+    </div>
+
+    <div class="card" data-text="reag culturas erro configuração" onclick="openDetail('d2')">
+      <h3>REAG – Falha para todas as culturas</h3>
+      <p>Falha ao executar REAG em qualquer cultura.</p>
+    </div>
+
+    <div class="card" data-text="usuários criar cadastro senha" onclick="openDetail('d3')">
+      <h3>Criação de Usuários</h3>
+      <p>Procedimento para criar usuários no VIASOFT3C.</p>
+    </div>
+
+    <div class="card" data-text="cheques estorno situação aberto" onclick="openDetail('d4')">
+      <h3>Cheques – Estorno</h3>
+      <p>Erro ao excluir cheque pois não está em situação ABERTO.</p>
+    </div>
+
+    <div class="card" data-text="lote xml qlote quantidade" onclick="openDetail('d5')">
+      <h3>Lote no XML</h3>
+      <p>QLote exibindo quantidade fabricada em vez da vendida.</p>
+    </div>
+
+    <div class="card" data-text="monitor notas nsu conexão" onclick="openDetail('d6')">
+      <h3>Monitor de Notas</h3>
+      <p>Notas não são buscadas pelo monitor.</p>
+    </div>
+
+    <div class="card" data-text="reag base atualização" onclick="openDetail('d7')">
+      <h3>Atualização da Base REAG</h3>
+      <p>Como atualizar a base via arquivos.</p>
+    </div>
+
+    <div class="card" data-text="pedido nota vínculo" onclick="openDetail('d8')">
+      <h3>Pedido não vinculado à nota</h3>
+      <p>Pedido não vincula automaticamente à NF.</p>
+    </div>
+
+    <div class="card" data-text="comissão renegociação títulos" onclick="openDetail('d9')">
+      <h3>Comissão para Renegociações</h3>
+      <p>Comissão não gerada em títulos renegociados.</p>
+    </div>
+
+    <div class="card" data-text="erro impostos nota tributação" onclick="openDetail('d10')">
+      <h3>Erro de Impostos na Nota</h3>
+      <p>Erro ao lançar nota fiscal.</p>
+    </div>
+
+    <div class="card" data-text="campos obrigatórios person" onclick="openDetail('d11')">
+      <h3>Campos Obrigatórios</h3>
+      <p>Como marcar um campo como obrigatório.</p>
+    </div>
+
+    <!-- ✅ NOVO CARD -->
+    <div class="card" data-text="autorização desconto notas validar desconto máximo" onclick="openDetail('d14')">
+      <h3>Autorização para desconto nas notas</h3>
+      <p>Como habilitar a validação de desconto máximo nos produtos.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- MODAL -->
+<div id="detailModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;">
+  <div style="background:#fff;max-width:700px;width:100%;border-radius:12px;padding:30px;position:relative;">
+    <button onclick="closeDetail()" style="position:absolute;right:20px;top:20px;border:none;background:none;font-size:20px;">✖</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
+
 <script>
 const details = {
-  d14: `<h2>Reiniciar servidor Cerati</h2>
-       <p>Após reiniciar o servidor da Cerati, executar o <strong>Socket Server</strong> e o <strong>DF-e</strong> como <strong>Administrador</strong>.</p>`,
-
-  d1: `<h2>EXMPIMP – Exportação não aparece no SPED</h2>
-       <p><strong>Sintoma:</strong> Exportação não aparece no SPED mesmo após execução do exmpimp.</p>
-       <p><strong>Causas:</strong></p>
-       <ul><li>Serviço activeemp não está ativado.</li><li>Integração Fiscal desativada.</li></ul>
-       <p><strong>Como resolver:</strong></p>
-       <ol><li>Abrir o <em>activeemp</em> pelo Gerenciador de Tarefas.</li><li>Ativar o serviço <strong>Integração Fiscal</strong>.</li></ol>`,
-
-  d2: `<h2>REAG – Falha para todas as culturas</h2>
-       <p><strong>Sintoma:</strong> Falha ao executar REAG.</p>
-       <p><strong>Como resolver:</strong></p>
-       <ol><li>Acessar Configurações → Configurações → REAG.</li><li>Marcar exibição do <strong>226.328</strong>.</li></ol>`,
-
-  d3: `<h2>Criação de Usuários</h2>
-       <ol><li>Acessar VIASOFT3C.</li><li>Ir em Configurações → Usuários → Cadastro de Usuários.</li><li>Criar usuário e definir senha.</li><li>Testar login.</li></ol>`,
-
-  d4: `<h2>Cheques – Estorno</h2>
-       <p><strong>Erro:</strong> Não é possível excluir cheque.</p>
-       <p><strong>Causa:</strong> Situação diferente de <strong>ABERTO</strong>.</p>`,
-
-  d5: `<h2>Lote no XML – QLOTE</h2>
-       <p><strong>Descrição:</strong> XML mostra quantidade fabricada.</p>
-       <p><strong>Solução:</strong></p>
-       <ol><li>Acessar Estoque → Controle de Lotes → Data de validade.</li><li>Zerar quantidade total de lotes.</li></ol>`,
-
-  d6: `<h2>Monitor de Notas não busca notas</h2>
-       <p><strong>Causas:</strong></p>
-       <ul><li>NSU usado.</li><li>Conexão com servidor falhando.</li></ul>`,
-
-  d7: `<h2>Atualização da Base REAG</h2><ol><li>Acessar Atualizações → Atualizar via arquivos.</li></ol>`,
-
-  d8: `<h2>Pedido não vinculado a nota</h2>
-       <p><strong>Caso algum pedido não esteja vinculado na nota, seguir as ações:</strong></p>
-       <p><strong>Solução:</strong></p>
-       <ol>
-         <li>Mudar o status da tabela <strong>PEDCAB</strong> para <strong>B</strong>.</li>
-         <li>Inserir registros na tabela <strong>peditetmnfitem</strong>.</li>
-         <li>Verificar se existe a configuração do <strong>"a partir de"</strong>.</li>
-       </ol>`,
-
-  d9: `<h2>Comissão para Renegociações</h2>
-       <ol><li>Acessar parâmetros do usuário.</li><li>Habilitar opção <strong>Altera Comissão de Dup. Renegociadas</strong>.</li></ol>`,
-
-  d10: `<h2>Erro de Impostos ao lançar Nota</h2>
-        <p>Checar tributação, estado, consumidor final.</p>`,
-
-  d11: `<h2>Campos Obrigatórios</h2>
-        <p>Definir no <em>person</em>.</p>`,
-
-  d12: `<h2>Monitor CT-e e NF-e não buscando informações</h2>
-        <p><strong>Valide todas as informações abaixo:</strong></p>
-        <ol>
-          <li><strong>Link do Portal DOC:</strong> https://portaldoc.viasoft.com.br/viasoft</li>
-          <li><strong>Certificado Digital:</strong> Verificar tanto no <em>agro3c</em> quanto no <em>viasoft3c</em>.</li>
-          <li><strong>Agendador de Tarefas:</strong> Confirmar se está ativo e executando.</li>
-        </ol>`,
-
-  d13: `<h2>DF-e informando porta já em uso</h2>
-        <ol>
-          <li>Abrir o Gerenciador de Tarefas, verificar se o DF-e já está aberto, finalizar o processo e tentar reabrir.</li>
-          <li>No menu <strong>Conexões > Opções</strong>, confirmar se as portas estão corretas (geralmente: <strong>300</strong>, <strong>301</strong> e <strong>9090</strong>).</li>
-        </ol>`
+  d14: `
+    <h2>Autorização para desconto nas notas</h2>
+    <p>Para habilitar a autorização de desconto nas notas fiscais, siga o procedimento abaixo:</p>
+    <ol>
+      <li>Acesse o menu <strong>Configurações</strong> do AGRO;</li>
+      <li>Entre em <strong>ADICIONAL</strong>;</li>
+      <li>Localize a opção <strong>Desconto Máximo nos produtos</strong>;</li>
+      <li>Marque a checkbox <strong>VALIDAR DESCONTO MÁXIMO</strong>.</li>
+    </ol>
+  `
 };
 
 function openDetail(id){
@@ -133,8 +129,14 @@ function openDetail(id){
   document.getElementById('detailModal').style.display='flex';
 }
 function closeDetail(){document.getElementById('detailModal').style.display='none';}
-function filter(){let q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.dataset.text.includes(q)?'block':'none'});}  
+function filter(){
+  let q=document.getElementById('q').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display=c.dataset.text.includes(q)?'block':'none'
+  });
+}
 function resetSearch(){document.getElementById('q').value='';filter();}
 </script>
+
 </body>
 </html>
