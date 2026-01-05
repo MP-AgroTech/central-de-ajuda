@@ -139,12 +139,41 @@ const details = {
   d4:`<h2>Cheques – Estorno</h2><p>Situação deve estar ABERTO.</p>`,
   d5:`<h2>Lote no XML</h2><p>Zerar quantidade total de lotes.</p>`,
   d6:`<h2>Monitor de Notas</h2><p>Verificar NSU e conexão.</p>`,
-  d7:`<h2>Atualização da Base REAG</h2><p>Atualizar via arquivos.</p>`,
-  d8:`<h2>Pedido não vinculado à Nota</h2><p>Inserir registro em peditemnfitem.</p>`,
+  d7:`<h2>Atualização da Base REAG</h2>
+        <ol>
+           <li>Acesse o <strong>REAG</strong>;</li>
+           <li>No menu principal, clique em <strong>Atualizações</strong>;</li>
+           <li>Selecione a opção <strong>Atualizar via arquivos</strong>;</li>
+           <li>Clique em <strong>Download dos arquivos</strong>;</li>
+           <li>Após o download, utilize a opção <strong>Importar</strong> para concluir a atualização.</li>
+        </ol>`,
+  d8:`<h2>Pedido não vinculado à Nota</h2>
+        <ol>
+              <li>Acesse o <strong>banco de dados</strong> do sistema;</li>
+              <li>Verifique se existe registro na tabela <strong>peditemnfitem</strong>;</li>
+              <li>Caso <strong>não exista</strong>, será necessário <strong>criar o registro </strong>correspondente ao vínculo entre o pedido e a nota;</li>
+              <li>Caso <strong>já exista</strong>, realize <strong>outras verificações</strong>,como consistência de dados e relacionamentos entre pedido e NF.</li>
+        </ol>`,
   d9:`<h2>Comissão para Renegociações</h2><p>Habilitar alteração de comissão.</p>`,
   d10:`<h2>Erro de Impostos</h2><p>Checar tributação.</p>`,
-  d11:`<h2>Campos Obrigatórios</h2><p>Definir no person.</p>`,
-  d12:`<h2>Monitor CT-e e NF-e</h2><p>Validar Portal DOC, certificado e agendador.</p>`,
+  d11:`<h2>Campos Obrigatórios</h2>
+         <ol>
+              <li>Acesse o <strong>PERSON</strong>;</li>
+              <li>Localize a <strong>tabela</strong> onde o campo/coluna está cadastrado;</li>
+              <li>Selecione a <strong>coluna</strong> desejada;</li>
+              <li>Marque a coluna como <strong>Obrigatória</strong>;</li>
+              <li>Salve as alterações e valide o funcionamento.</li>
+        </ol>`,
+  d12:`<h2>Monitor CT-e e NF-e não buscando informações</h2>
+         <ol>
+             <li>Acesse as <strong>Configurações do Agro</strong>;</li>
+             <li>Valide as configurações do <strong>Portal DOC</strong>;</li>
+             <li>Acesse o <strong>VIASOFT3C</strong>;</li>
+             <li>Valide o <strong>Certificado Digital</strong> no VIASOFT3C;</li>
+             <li>Confirme também o <strong>Certificado Digital</strong> nas configurações do Agro;</li>
+             <li>Retorne a <strong>sequência do NSU</strong>;</li>
+             <li>Realize um novo teste de busca no monitor.</li>
+        </ol>`,
   d13:`<h2>DF-e porta em uso</h2><p>Ajustar portas ou finalizar processo.</p>`,
   d14:`<h2>DANFE diferente do XML</h2><p>Marcar DANFE sair igual ao XML.</p>`,
   d15:`<h2>Arquivos do Sistema</h2><p>Sempre abrir com Bloco de Notas.</p>`,
