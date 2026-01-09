@@ -23,7 +23,7 @@
 <header>
   <div style="position:absolute;left:20px;top:15px;">
     <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-      Atualizado: <strong>08/01/2026</strong>
+      Atualizado: <strong>09/01/2026</strong>
     </div>
   </div>
 
@@ -62,11 +62,6 @@
     <div class="card" data-text="lote xml qlote quantidade" onclick="openDetail('d5')">
       <h3>Lote no XML</h3>
       <p>QLote exibindo quantidade fabricada em vez da vendida.</p>
-    </div>
-
-    <div class="card" data-text="monitor notas nsu conexão" onclick="openDetail('d6')">
-      <h3>Monitor de Notas</h3>
-      <p>Notas não são buscadas pelo monitor.</p>
     </div>
 
     <div class="card" data-text="reag base atualização" onclick="openDetail('d7')">
@@ -124,7 +119,10 @@
   <h3>CUSTOS – Produto com custo zerado</h3>
   <p>Produto sem custo após movimentações no estoque.</p>
 </div>
-
+<div class="card" data-text="atualização crm crm-web atualizador glassfish undeploy localhost 4848" onclick="openDetail('d18')">
+  <h3>Atualização – CRM</h3>
+  <p>Procedimento para atualização do CRM-Web.</p>
+</div>
 
   </div>
 </main>
@@ -141,10 +139,22 @@
 const details = {
   d1:`<h2>EXMPIMP – Exportação não aparece no SPED</h2><p>Ativar Integração Fiscal no activeemp.</p>`,
   d2:`<h2>REAG – Falha para todas as culturas</h2><p>Marcar exibição do 226.328.</p>`,
-  d3:`<h2>Criação de Usuários</h2><p>Configurações → Usuários → Cadastro.</p>`,
-  d4:`<h2>Cheques – Estorno</h2><p>Situação deve estar ABERTO.</p>`,
+d3:`<h2>Criação de Usuários</h2>
+     <ol>
+       <li>Acessar o <strong>VIASOFT3C</strong> e ir em <strong>Configurações &gt; Usuários &gt; Cadastro de Usuários</strong>;</li>
+       <li>Criar um <strong>novo usuário</strong> e definir as <strong>permissões de acesso</strong> conforme a necessidade;</li>
+       <li>Para definir a <strong>senha</strong>, clique nos <strong>três risquinhos</strong> no canto superior esquerdo e informe uma <strong>senha provisória</strong>.</li>
+     </ol>`,
+
+d4:`<h2>Cheques – Estorno</h2>
+     <ol>
+       <li>Ao tentar realizar um estorno de cheque e;</li>
+       <li>Se o sistema não permitir, verifique a <strong>situação do cheque</strong>;</li>
+       <li>O cheque <strong>não pode estar com a situação ABERTO</strong>;</li>
+       <li>Altere a situação e tente realizar o estorno novamente.</li>
+     </ol>`,
+
   d5:`<h2>Lote no XML</h2><p>Zerar quantidade total de lotes.</p>`,
-  d6:`<h2>Monitor de Notas</h2><p>Verificar NSU e conexão.</p>`,
   d7:`<h2>Atualização da Base REAG</h2>
         <ol>
            <li>Acesse o <strong>REAG</strong>;</li>
@@ -191,6 +201,7 @@ const details = {
          <li>Salve as alterações.</li>
        </ol>`,
 d17:`<h2>CUSTOS – Produto com custo zerado</h2>
+
      <ol>
        <li>Verifique se existem <strong>vários estabs</strong> cadastrados;</li>
        <li>Confirme se está habilitada a opção de <strong>sincronização de custos entre os estabs</strong>;</li>
@@ -198,7 +209,24 @@ d17:`<h2>CUSTOS – Produto com custo zerado</h2>
            <strong>Estoque &gt; Custo &gt; Recalculo</strong>;</li>
        <li>Execute o <strong>recalculo de custos</strong>;</li>
        <li>Após o recalculo, valide se o <strong>custo foi gerado corretamente</strong>.</li>
+     </ol>
+
+     <h3>Outra verificação</h3>
+     <ol>
+       <li>Verificar se existem <strong>notas de compra</strong> para o item;</li>
+       <li>Verificar se as <strong>notas de compra</strong> ou <strong>transferência (entrada)</strong> estão com o <strong>valor unitário</strong> informado;</li>
+       <li>Caso não estejam, o valor poderá ser incluído diretamente na <strong>tabela nfitem</strong>.</li>
+     </ol>`,
+d18:`<h2>Atualização – CRM</h2>
+     <ol>
+       <li>Solicitar o <strong>link do atualizador</strong> ao Luiz;</li>
+       <li>Acessar o endereço <strong>localhost:4848</strong> e realizar o login com usuário e senha;</li>
+       <li>No menu <strong>Application</strong>, localizar e <strong>excluir (Undeploy)</strong> a aplicação <strong>CRM-WEB</strong>;</li>
+       <li>Incluir o <strong>novo atualizador</strong>, renomeando a aplicação para <strong>CRM-WEB</strong>;</li>
+       <li>Acessar o menu <strong>Server (Admin)</strong> e <strong>reiniciar o serviço</strong>;</li>
+       <li>Acessar o <strong>CRM</strong> e realizar os testes.</li>
      </ol>`
+
 
 };
 
