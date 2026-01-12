@@ -23,7 +23,7 @@
 <header>
   <div style="position:absolute;left:20px;top:15px;">
     <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-      Atualizado: <strong>09/01/2026</strong>
+      Atualizado: <strong>12/01/2026</strong>
     </div>
   </div>
 
@@ -171,7 +171,20 @@ d4:`<h2>Cheques – Estorno</h2>
               <li>Caso <strong>já exista</strong>, realize <strong>outras verificações</strong>,como consistência de dados e relacionamentos entre pedido e NF.</li>
         </ol>`,
   d9:`<h2>Comissão para Renegociações</h2><p>Habilitar alteração de comissão.</p>`,
-  d10:`<h2>Erro de Impostos</h2><p>Checar tributação.</p>`,
+d10:`<h2>Erro de Impostos na Nota Fiscal</h2>
+     <ol>
+       <li>Abrir o <strong>item</strong> e verificar em qual <strong>tributação</strong> ele está configurado 
+           (<strong>Item &gt; Tributação &gt; Tributação</strong>);</li>
+       <li>Abrir a <strong>tributação</strong> e localizar a <strong>regra</strong> na qual o item se enquadra,
+           verificando de <strong>qual estado</strong> o item está saindo e para <strong>qual estado</strong> a nota está sendo emitida;</li>
+       <li>Conferir toda a <strong>regra de tributação</strong>, validando:
+         <ul>
+           <li>Se a <strong>natureza da operação</strong> está vinculada à regra;</li>
+           <li>Se a <strong>pessoa</strong> está configurada como <strong>associada</strong> ou <strong>consumidor final</strong>;</li>
+           <li>Se existe <strong>CST</strong> configurado corretamente na regra.</li>
+         </ul>
+       </li>
+     </ol>`,
   d11:`<h2>Campos Obrigatórios</h2>
          <ol>
               <li>Acesse o <strong>PERSON</strong>;</li>
