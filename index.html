@@ -23,7 +23,7 @@
 <header>
   <div style="position:absolute;left:20px;top:15px;">
     <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-      Atualizado: <strong>12/01/2026</strong>
+      Atualizado: <strong>09/01/2026</strong>
     </div>
   </div>
 
@@ -123,6 +123,11 @@
   <h3>Atualização – CRM</h3>
   <p>Procedimento para atualização do CRM-Web.</p>
 </div>
+<div class="card" data-text="cálculo custo preço produtos cerati custo médio margem lucro estoque" onclick="openDetail('d19')">
+  <h3>Como o sistema calcula o custo e o preço dos produtos – CERATI</h3>
+  <p>Entenda de forma simples como o sistema chega ao preço final de venda.</p>
+</div>
+
 
   </div>
 </main>
@@ -246,7 +251,93 @@ d18:`<h2>Atualização – CRM</h2>
        <li>Incluir o <strong>novo atualizador</strong>, renomeando a aplicação para <strong>CRM-WEB</strong>;</li>
        <li>Acessar o menu <strong>Server (Admin)</strong> e <strong>reiniciar o serviço</strong>;</li>
        <li>Acessar o <strong>CRM</strong> e realizar os testes.</li>
-     </ol>`
+     </ol>`,
+	 d19:`<h2>Como o sistema calcula o custo e o preço dos produtos – CERATI</h2>
+
+     <p>
+       O sistema pega o <strong>valor da compra</strong>, ajusta pelo <strong>prazo de pagamento</strong>,
+       considera o <strong>estoque que já existe</strong>, soma alguns <strong>acréscimos</strong> e depois
+       aplica a <strong>margem de lucro</strong>.
+       <br><br>
+       👉 O resultado é o <strong>preço final de venda</strong>.
+     </p>
+
+     <h3>📊 Infográfico em texto — como o cálculo funciona</h3>
+     <pre style="font-family:inherit">
+Pedido de Compra
+      ↓
+Valor da Compra
+      ↓
+Ajuste pelo Prazo de Pagamento
+      ↓
+Cálculo do Custo (considera estoque)
+      ↓
+Acréscimos do Produto
+      ↓
+Aplicação da Margem de Lucro
+      ↓
+Preço Final de Venda
+     </pre>
+
+     <h3>🧩 Explicação passo a passo (bem fácil)</h3>
+
+     <h4>1️⃣ Pedido de compra</h4>
+     <p>
+       Quando uma compra é lançada, o valor da compra vira o <strong>custo inicial</strong> do produto.
+     </p>
+     <p>
+       👉 Exemplo:<br>
+       Compra = R$ 100,00<br>
+       Custo inicial = R$ 100,00
+     </p>
+
+     <h4>2️⃣ Ajuste pelo prazo de pagamento</h4>
+     <p>
+       Se a compra não é paga à vista, o sistema realiza um <strong>ajuste pelo prazo</strong>.
+       Prazo maior pode <strong>aumentar ou reduzir</strong> o custo, corrigindo o valor pelo tempo.
+     </p>
+     <p>
+       👉 Exemplo:<br>
+       Custo: R$ 100,00<br>
+       Ajuste de +3%<br>
+       Novo custo = R$ 103,00
+     </p>
+
+     <h4>3️⃣ Estoque já existente</h4>
+     <p>
+       Caso o produto já exista em estoque, o sistema <strong>não substitui o custo</strong>.
+       Ele calcula um <strong>custo médio</strong> entre o valor antigo e o novo.
+     </p>
+     <p>
+       👉 Exemplo:<br>
+       Custo antigo: R$ 95,00<br>
+       Novo custo: R$ 103,00<br>
+       Custo médio = R$ 99,00
+     </p>
+
+     <h4>4️⃣ Acréscimos do produto</h4>
+     <p>
+       Alguns produtos possuem <strong>acréscimos configurados</strong>, como taxas ou ajustes adicionais,
+       que são somados ao custo.
+     </p>
+     <p>
+       👉 Exemplo:<br>
+       Custo: R$ 99,00<br>
+       Acréscimos: 6%<br>
+       Novo custo = R$ 104,94
+     </p>
+
+     <h4>5️⃣ Margem de lucro</h4>
+     <p>
+       Por fim, o sistema aplica a <strong>margem de lucro</strong> configurada para o produto,
+       chegando ao preço final de venda.
+     </p>
+     <p>
+       👉 Exemplo:<br>
+       Custo final: R$ 104,94<br>
+       Margem: 30%<br>
+       Preço de venda = R$ 136,42
+     </p>`,
 
 
 };
