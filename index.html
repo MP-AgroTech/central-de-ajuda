@@ -23,7 +23,7 @@
 <header>
   <div style="position:absolute;left:20px;top:15px;">
     <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-      Atualizado: <strong>09/01/2026</strong>
+      Atualizado: <strong>14/01/2026</strong>
     </div>
   </div>
 
@@ -142,7 +142,14 @@
 
 <script>
 const details = {
-  d1:`<h2>EXMPIMP – Exportação não aparece no SPED</h2><p>Ativar Integração Fiscal no activeemp.</p>`,
+d1:`<h2>EXMPIMP – Exportação não aparece no SPED</h2>
+     <ol>
+       <li>Reiniciar o <strong>XE</strong>;</li>
+       <li>Reiniciar os <strong>serviços fiscais</strong>;</li>
+       <li>Reiniciar o serviço <strong>ActiveMQ</strong>;</li>
+       <li>Após a reinicialização, executar novamente o <strong>EXMPIMP</strong>;</li>
+       <li>Validar se a <strong>exportação passou a aparecer no SPED</strong>.</li>
+     </ol>`,
   d2:`<h2>REAG – Falha para todas as culturas</h2><p>Marcar exibição do 226.328.</p>`,
 d3:`<h2>Criação de Usuários</h2>
      <ol>
