@@ -127,6 +127,15 @@
   <h3>Como o sistema calcula o custo e o preço dos produtos – CERATI</h3>
   <p>Entenda de forma simples como o sistema chega ao preço final de venda.</p>
 </div>
+<div class="card" data-text="reag termo de risco configuração impressão receituário" onclick="openDetail('d20')">
+  <h3>REAG – Configuração de termo de risco</h3>
+  <p>Como habilitar a emissão do termo de risco no receituário.</p>
+</div>
+<div class="card" data-text="auditoria sistema não registrando alterações viasoft server agro activemq" onclick="openDetail('d21')">
+  <h3>Sistema não registrando alterações na auditoria</h3>
+  <p>Procedimentos para validar e corrigir o funcionamento da auditoria.</p>
+</div>
+
 
 
   </div>
@@ -345,6 +354,31 @@ Preço Final de Venda
        Margem: 30%<br>
        Preço de venda = R$ 136,42
      </p>`,
+d20:`<h2>REAG – Configuração de termo de risco</h2>
+     <ol>
+       <li>Acessar o <strong>REAG</strong>;</li>
+       <li>Ir em <strong>Configurações &gt; Configurações</strong>;</li>
+       <li>Acessar a aba <strong>Impressão Receituário</strong>;</li>
+       <li>Localizar a opção <strong>Emite Termo de Risco</strong>;</li>
+       <li>Marcar a opção como <strong>SIM</strong>;</li>
+       <li>Salvar as alterações e realizar um teste de emissão do receituário.</li>
+     </ol>`,
+d21:`<h2>Sistema não registrando alterações na auditoria</h2>
+     <ol>
+       <li>Acessar o <strong>VIASOFT SERVER AGRO</strong>;</li>
+       <li>Ir em <strong>Configurações &gt; Opções &gt; Auditoria</strong> e validar se a <strong>auditoria está habilitada e funcionando</strong>;</li>
+       <li>
+         Caso esteja habilitada, baixar os arquivos disponíveis no link abaixo:<br>
+         👉 <a href="https://drive.google.com/drive/folders/1aHOCp1D05EpCLXU8RoDWVxsJiwePhmqM" target="_blank">
+         Acessar arquivos da auditoria
+         </a>
+       </li>
+       <li>Substituir os arquivos na pasta <strong>C:\\VIASOFT\\AUDITORIA</strong>, ajustando também o <strong>caminho dos arquivos</strong>, se necessário;</li>
+       <li>Acessar os <strong>Serviços do Windows</strong>;</li>
+       <li>Reiniciar o serviço da <strong>Auditoria</strong>;</li>
+       <li>Reiniciar também o serviço <strong>ActiveMQ</strong>;</li>
+       <li>Validar se as <strong>alterações passaram a ser registradas corretamente</strong>.</li>
+     </ol>`,
 
 
 };
