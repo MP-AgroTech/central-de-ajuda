@@ -135,6 +135,16 @@
   <h3>Sistema não registrando alterações na auditoria</h3>
   <p>Procedimentos para validar e corrigir o funcionamento da auditoria.</p>
 </div>
+<div class="card" data-text="falha importação sped erro registro campo inválido mercadorias duplicadas" onclick="openDetail('d22')">
+  <h3>Falha na importação do arquivo SPED</h3>
+  <p>Erro de registro ou campo não informado/ inválido.</p>
+</div>
+<div class="card" data-text="reag receituários mesma numeração reutilizar numeração receita" onclick="openDetail('d23')">
+  <h3>REAG – Receituários saindo com a mesma numeração</h3>
+  <p>Como corrigir a numeração repetida dos receituários.</p>
+</div>
+
+
 
 
 
@@ -379,7 +389,32 @@ d21:`<h2>Sistema não registrando alterações na auditoria</h2>
        <li>Reiniciar também o serviço <strong>ActiveMQ</strong>;</li>
        <li>Validar se as <strong>alterações passaram a ser registradas corretamente</strong>.</li>
      </ol>`,
+d22:`<h2>Falha na importação do arquivo SPED</h2>
+     <p>
+       Caso ocorra erro na importação do SPED, como <strong>registro ou campo não informado</strong> 
+       ou <strong>campo inválido</strong> relacionado a algum item, siga os passos abaixo para correção:
+     </p>
+     <ol>
+       <li>Acessar o <strong>SPED</strong>;</li>
+       <li>Ir em <strong>Menu &gt; Cadastros Específicos &gt; Mercadorias e Serviços &gt; Mercadorias/Alterações</strong>;</li>
+       <li>Localizar e <strong>excluir registros de produtos duplicados</strong>;</li>
+       <li>Após a exclusão, realizar novamente a <strong>importação do arquivo SPED</strong>.</li>
+     </ol>`,
+d23:`<h2>REAG – Receituários saindo com a mesma numeração</h2>
+     <p>
+       Para corrigir o problema de <strong>receituários sendo emitidos com a mesma numeração</strong>,
+       siga os passos abaixo:
+     </p>
+     <ol>
+       <li>Acessar o <strong>REAG</strong>;</li>
+       <li>Ir em <strong>Configurações &gt; Configurações &gt; REAG</strong>;</li>
+       <li>Acessar a aba <strong>Receita</strong>;</li>
+       <li>Localizar a opção <strong>Reutilizar Numeração Receita</strong>;</li>
+       <li>Marcar a opção como <strong>NÃO</strong>;</li>
+       <li>Salvar as alterações e realizar um novo teste de emissão do receituário.</li>
+     </ol>`
 
+	 
 
 };
 
