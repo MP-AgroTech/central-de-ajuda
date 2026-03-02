@@ -151,6 +151,10 @@
   <h3>Orion – Usuário e senha padrão</h3>
   <p>Credenciais padrão para acesso ao sistema Orion.</p>
 </div>
+<div class="card" data-text="configuração boleto híbrido sicredi manual emissão" onclick="openDetail('d26')">
+  <h3>Configuração do boleto híbrido – Sicredi</h3>
+  <p>Manual para emissão e configuração do boleto híbrido.</p>
+</div>
 
 
 
@@ -287,92 +291,6 @@ d18:`<h2>Atualização – CRM</h2>
        <li>Acessar o menu <strong>Server (Admin)</strong> e <strong>reiniciar o serviço</strong>;</li>
        <li>Acessar o <strong>CRM</strong> e realizar os testes.</li>
      </ol>`,
-	 d19:`<h2>Como o sistema calcula o custo e o preço dos produtos – CERATI</h2>
-
-     <p>
-       O sistema pega o <strong>valor da compra</strong>, ajusta pelo <strong>prazo de pagamento</strong>,
-       considera o <strong>estoque que já existe</strong>, soma alguns <strong>acréscimos</strong> e depois
-       aplica a <strong>margem de lucro</strong>.
-       <br><br>
-       👉 O resultado é o <strong>preço final de venda</strong>.
-     </p>
-
-     <h3>📊 Infográfico em texto — como o cálculo funciona</h3>
-     <pre style="font-family:inherit">
-Pedido de Compra
-      ↓
-Valor da Compra
-      ↓
-Ajuste pelo Prazo de Pagamento
-      ↓
-Cálculo do Custo (considera estoque)
-      ↓
-Acréscimos do Produto
-      ↓
-Aplicação da Margem de Lucro
-      ↓
-Preço Final de Venda
-     </pre>
-
-     <h3>🧩 Explicação passo a passo (bem fácil)</h3>
-
-     <h4>1️⃣ Pedido de compra</h4>
-     <p>
-       Quando uma compra é lançada, o valor da compra vira o <strong>custo inicial</strong> do produto.
-     </p>
-     <p>
-       👉 Exemplo:<br>
-       Compra = R$ 100,00<br>
-       Custo inicial = R$ 100,00
-     </p>
-
-     <h4>2️⃣ Ajuste pelo prazo de pagamento</h4>
-     <p>
-       Se a compra não é paga à vista, o sistema realiza um <strong>ajuste pelo prazo</strong>.
-       Prazo maior pode <strong>aumentar ou reduzir</strong> o custo, corrigindo o valor pelo tempo.
-     </p>
-     <p>
-       👉 Exemplo:<br>
-       Custo: R$ 100,00<br>
-       Ajuste de +3%<br>
-       Novo custo = R$ 103,00
-     </p>
-
-     <h4>3️⃣ Estoque já existente</h4>
-     <p>
-       Caso o produto já exista em estoque, o sistema <strong>não substitui o custo</strong>.
-       Ele calcula um <strong>custo médio</strong> entre o valor antigo e o novo.
-     </p>
-     <p>
-       👉 Exemplo:<br>
-       Custo antigo: R$ 95,00<br>
-       Novo custo: R$ 103,00<br>
-       Custo médio = R$ 99,00
-     </p>
-
-     <h4>4️⃣ Acréscimos do produto</h4>
-     <p>
-       Alguns produtos possuem <strong>acréscimos configurados</strong>, como taxas ou ajustes adicionais,
-       que são somados ao custo.
-     </p>
-     <p>
-       👉 Exemplo:<br>
-       Custo: R$ 99,00<br>
-       Acréscimos: 6%<br>
-       Novo custo = R$ 104,94
-     </p>
-
-     <h4>5️⃣ Margem de lucro</h4>
-     <p>
-       Por fim, o sistema aplica a <strong>margem de lucro</strong> configurada para o produto,
-       chegando ao preço final de venda.
-     </p>
-     <p>
-       👉 Exemplo:<br>
-       Custo final: R$ 104,94<br>
-       Margem: 30%<br>
-       Preço de venda = R$ 136,42
-     </p>`,
 d20:`<h2>REAG – Configuração de termo de risco</h2>
      <ol>
        <li>Acessar o <strong>REAG</strong>;</li>
@@ -438,6 +356,19 @@ d25:`<h2>Orion – Usuário e senha padrão</h2>
        <li><strong>Usuário:</strong> admin</li>
        <li><strong>Senha:</strong> via@2018</li>
      </ul>`,
+	 d26:`<h2>Configuração do boleto híbrido – Sicredi</h2>
+     <p>
+       Para realizar a configuração do <strong>boleto híbrido – Sicredi</strong>,
+       siga o manual oficial disponível no link abaixo:
+     </p>
+     <p>
+       <a href="https://nimitz.atlassian.net/wiki/spaces/Produtos/pages/3637870603/Emiss+o+de+Boleto+H+brido" target="_blank">
+       Acessar manual de emissão de boleto híbrido
+       </a>
+     </p>
+     <p>
+       O manual contém o passo a passo completo para configuração e emissão correta do boleto.
+     </p>`
 
 
 
