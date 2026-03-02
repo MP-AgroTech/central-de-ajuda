@@ -23,7 +23,7 @@
 <header>
   <div style="position:absolute;left:20px;top:15px;">
     <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-      Atualizado: <strong>02/03/2026</strong>
+      Atualizado: <strong>14/01/2026</strong>
     </div>
   </div>
 
@@ -154,6 +154,10 @@
 <div class="card" data-text="configuração boleto híbrido sicredi manual emissão" onclick="openDetail('d26')">
   <h3>Configuração do boleto híbrido – Sicredi</h3>
   <p>Manual para emissão e configuração do boleto híbrido.</p>
+</div>
+<div class="card" data-text="item reservado outro usuário estoque produtos a partir de" onclick="openDetail('d27')">
+  <h3>Item já reservado para outro usuário</h3>
+  <p>Como liberar item reservado para permitir lançamento.</p>
 </div>
 
 
@@ -368,6 +372,19 @@ d25:`<h2>Orion – Usuário e senha padrão</h2>
      </p>
      <p>
        O manual contém o passo a passo completo para configuração e emissão correta do boleto.
+     </p>`,
+	 d27:`<h2>Item já reservado para outro usuário</h2>
+     <p>
+       Caso apareça a mensagem informando que o <strong>item já está reservado para outro usuário</strong>,
+       siga os passos abaixo:
+     </p>
+     <ol>
+       <li>Acessar o menu <strong>Estoque &gt; Item &gt; Produtos Bloq. a partir de</strong>;</li>
+       <li>Excluir o que estiver listado na tela (liberando a reserva);</li>
+       <li>Tentar novamente realizar o <strong>lançamento da nota ou do pedido</strong>.</li>
+     </ol>
+     <p>
+       Após esse procedimento, o item deverá estar disponível para uso normalmente.
      </p>`
 
 
