@@ -23,7 +23,7 @@
 <header>
   <div style="position:absolute;left:20px;top:15px;">
     <div style="display:inline-block;background:#0b5fff;color:#fff;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.25);">
-      Atualizado: <strong>14/01/2026</strong>
+      Atualizado: <strong>24/03/2026</strong>
     </div>
   </div>
 
@@ -158,6 +158,10 @@
 <div class="card" data-text="item reservado outro usuário estoque produtos a partir de" onclick="openDetail('d27')">
   <h3>Item já reservado para outro usuário</h3>
   <p>Como liberar item reservado para permitir lançamento.</p>
+</div>
+<div class="card" data-text="reiniciar crm manual glassfish start-domain stop-domain agro asadmin" onclick="openDetail('d28')">
+  <h3>CRM – Reiniciar Manualmente</h3>
+  <p>Comandos para iniciar e parar o domínio do CRM via asadmin.</p>
 </div>
 
 
@@ -385,7 +389,16 @@ d25:`<h2>Orion – Usuário e senha padrão</h2>
      </ol>
      <p>
        Após esse procedimento, o item deverá estar disponível para uso normalmente.
-     </p>`
+     </p>`,
+	 d28:`<h2>CRM – Reiniciar Manualmente</h2>
+     <p>Para reiniciar o CRM manualmente via prompt/arquivo de lote, siga os passos:</p>
+     <ol>
+       <li>Acesse o diretório: <strong>C:\\Server\\glassfish4\\bin\\</strong>;</li>
+       <li>Execute o arquivo <strong>asadmin.bat</strong>;</li>
+       <li>Para parar o serviço, digite: <br><code>stop-domain agro</code></li>
+       <li>Para iniciar o serviço, digite: <br><code>start-domain agro</code></li>
+     </ol>
+     <p><strong>Nota:</strong> Certifique-se de executar o asadmin como administrador se o sistema solicitar permissões.</p>`
 
 
 
